@@ -4,7 +4,7 @@ import loginimg from '../../assets/images/login/login.gif'
 
 const Login = () => {
     const handleLogin=event=>{
-
+        event.preventDefault();
     }
     return (
         <div className="hero w-full my-8 ">
