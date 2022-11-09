@@ -1,0 +1,56 @@
+[
+    {
+      "_id": "636bec47d29a2af0effd56ae",
+      "service_id": "01",
+      "img": "https://i.ibb.co/VCDSy0B/charlesdeluvio-Pv-AAYZx-yf8-unsplash.jpg",
+      "price": 29,
+      "rating": 33,
+      "serviceName": "Strong Coleman",
+      "details": "Dolore laborum mollit voluptate ullamco occaecat esse excepteur. Mollit tempor ea culpa amet proident laborum est do elit fugiat officia commodo exercitation. Exercitation voluptate incididunt ipsum nisi aliquip sit.\r\n"
+    },
+    {
+      "_id": "636bec4798205fa737cbdc59",
+      "service_id": "02",
+      "img": "https://i.ibb.co/2NQy95J/kobby-mendez-q54-Oxq44-MZs-unsplash.jpg",
+      "price": 27,
+      "rating": 37,
+      "serviceName": "England Frost",
+      "details": "Ad aliquip eiusmod nisi nostrud aliquip ullamco. Consequat voluptate duis dolore in veniam aliquip esse voluptate et laboris reprehenderit. Culpa cupidatat duis laboris mollit ex nulla reprehenderit incididunt et occaecat elit dolore ut excepteur. Enim consectetur nostrud ipsum et. Quis nisi nulla eiusmod commodo.\r\n"
+    },
+    {
+      "_id": "636bec476c9e3e18cc1f3fae",
+      "service_id": "03",
+      "img": "https://i.ibb.co/gzJWQGB/markus-winkler-WHt-VB-Ri-W2-I-unsplash.jpg",
+      "price": 30,
+      "rating": 21,
+      "serviceName": "Deidre Key",
+      "details": "Labore esse aute laborum minim minim fugiat voluptate voluptate magna enim adipisicing. Fugiat laborum sint commodo veniam incididunt. Est nostrud exercitation ipsum mollit duis consectetur mollit anim tempor.\r\n"
+    },
+    {
+      "_id": "636bec47f4ddd837599e05f5",
+      "service_id": "04",
+      "img": "https://i.ibb.co/dK092Kp/matheus-cenali-w-Xuz-S9x-R49-M-unsplash.jpg",
+      "price": 21,
+      "rating": 20,
+      "serviceName": "Rae Erickson",
+      "details": "Excepteur voluptate dolor est occaecat duis culpa officia amet excepteur magna. Ea mollit dolore culpa ad ex laborum dolore do mollit qui. Ex ullamco cillum ut sint reprehenderit eiusmod aliquip irure aliqua deserunt minim consectetur magna eu. Ut anim exercitation adipisicing cillum ut nulla. Tempor anim duis aliquip culpa ex id pariatur cillum.\r\n"
+    },
+    {
+      "_id": "636bec47a5dcd3812a8f3929",
+      "service_id": "05",
+      "img": "https://i.ibb.co/MNchCHS/syed-f-hashemi-p91-GLh-Qv35o-unsplash.jpg",
+      "price": 22,
+      "rating": 36,
+      "serviceName": "Erin Hoover",
+      "details": "Consectetur cupidatat est exercitation nostrud quis pariatur cupidatat non ad sit. In ullamco quis sit culpa cupidatat Lorem nostrud cillum velit exercitation cupidatat cupidatat et qui. Aliqua qui minim ad ex est. Cillum minim magna laborum sunt. Officia excepteur quis laboris pariatur culpa magna.\r\n"
+    },
+    {
+      "_id": "636bec47a5dcd3812a8f3929",
+      "service_id": "06",
+      "img": "https://i.ibb.co/qrt7hjg/shourav-sheikh-a66s-Gf-Onnq-Q-unsplash.jpg",
+      "price": 22,
+      "rating": 36,
+      "serviceName": "Erin Hoover",
+      "details": "Consectetur cupidatat est exercitation nostrud quis pariatur cupidatat non ad sit. In ullamco quis sit culpa cupidatat Lorem nostrud cillum velit exercitation cupidatat cupidatat et qui. Aliqua qui minim ad ex est. Cillum minim magna laborum sunt. Officia excepteur quis laboris pariatur culpa magna.\r\n"
+    }
+  ]
