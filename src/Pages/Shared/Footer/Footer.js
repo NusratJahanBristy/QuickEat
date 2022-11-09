@@ -77,7 +77,7 @@ const Footer = () => {
 			</div>
 		</div>
 	</div>
-	<div className="py-6 text-sm text-center dark:text-gray-400">© 1968 Company Co. All rights reserved.</div>
+	<div className="py-6 text-sm text-center dark:text-gray-400">© 2023 QuickEat All rights reserved.</div>
 </footer>
     );
 };
