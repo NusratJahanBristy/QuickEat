@@ -5,6 +5,10 @@ import MyReviews from '../MyReviews/MyReviews';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import AllReviews from '../MyReviews/AllReviews';
+// import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 const ServiceDetails = () => {
   const services = useLoaderData();
   const {user}=useContext(AuthContext)
@@ -50,7 +54,10 @@ fetch('http://localhost:5000/reviews',{
         <div className="text-center lg:text-left">
 
           <div className="card hero-content w-full bg-base-100 shadow-xl">
-            <figure className='h-1/2'><img className='h-1/2 w-1/2' src={img} alt="Shoes" /></figure>
+            <PhotoProvider>
+           <PhotoView src={img}>
+           <figure className='h-1/2'><img className='h-1/2 w-1/2' src={img} alt="Shoes" /></figure>
+           </PhotoView>
             <div className="card-body">
               <h2 className="card-title text-3xl font-semibold  ">{serviceName}</h2>
               <p className='text-xl '>
@@ -66,7 +73,9 @@ fetch('http://localhost:5000/reviews',{
                 <button className="btn btn-block btn-warning bg-orange-600"><Link className='text-white  text-decoration-none'>Go to Checkout page</Link></button>
               </div>
             </div>
+            </PhotoProvider>
           </div>
+
         </div>
        
 <div className='mt-6 px-10'>

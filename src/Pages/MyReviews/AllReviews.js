@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AllReviews = ({ review, handleDelete, handleStatusUpdate }) => {
-    const { _id, img, price, serviceName, imgUrl, details, rating, status } = review;
+    const { _id, img, price, serviceName, imgUrl,email,details, rating, status } = review;
 
     return (
         <tr>
@@ -21,14 +21,14 @@ const AllReviews = ({ review, handleDelete, handleStatusUpdate }) => {
                     </div>
                     <div>
                         <div className="font-bold">{serviceName}</div>
-                        <div className="text-sm opacity-50">{details}</div>
+                        <div className="text-sm opacity-50">{imgUrl}</div>
                     </div>
                 </div>
             </td>
             <td>
-                {serviceName}
+                {email}
                 <br />
-                <span className="badge badge-ghost badge-sm">${price}</span>
+                {/* <span className="badge badge-ghost badge-sm">${price}</span> */}
             </td>
             <td>Purple</td>
             <th>

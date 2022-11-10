@@ -38,7 +38,7 @@ const Login = () => {
                 .then(data => {
                     console.log(data);
                     form.reset();
-                  
+                    setError('');
                     localStorage.setItem('quickEat-token', data.token);
                     navigate(from, { replace: true });
                 });

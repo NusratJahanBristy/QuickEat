@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 const ServicesCard = ({ service }) => {
   const { _id, img, price, serviceName,email, details, rating } = service;
   return (
     <div className="card h-5/6 w-full bg-base-100 shadow-xl fixed-height">
-      <figure className='h-1/2'><img className='h-5/6 w-5/6' src={img} alt="Shoes" /></figure>
+       <PhotoProvider>
+       <PhotoView src={img}>
+       <figure className='h-1/2'><img className='h-5/6 w-5/6' src={img} alt="Shoes" /></figure>
+       </PhotoView>
+     
       <div className="card-body">
         <h2 className="card-title text-3xl font-semibold">{serviceName}</h2>
         <p className='text-xl'>
@@ -26,6 +32,7 @@ const ServicesCard = ({ service }) => {
           <button className="btn btn-block btn-warning bg-orange-600"><Link className='text-white  text-decoration-none' to={`/services/${_id}`}>Go to Details</Link></button>
         </div>
       </div>
+      </PhotoProvider>
     </div>
   );
 };
