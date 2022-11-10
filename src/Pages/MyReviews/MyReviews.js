@@ -8,11 +8,11 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`,{
+        fetch(`https://quick-eat-server.vercel.app/reviews`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('quickEat-token')}`
             }
-        
+
         })
             .then(res => res.json())
             .then(data => setReviews(data))
@@ -21,7 +21,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete this review');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://quick-eat-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -37,7 +37,7 @@ const MyReviews = () => {
     }
     //update
     const handleStatusUpdate = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://quick-eat-server.vercel.app/orders/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -62,35 +62,40 @@ const MyReviews = () => {
 
             <h2 className="text-5xl text-center py-5">{reviews.length} Reviews</h2>
 
-            {/* {
-      user?.uid ?
-        <></>:<></>} */}
-            <h2 className="text-5xl text-center py-5">No reviews were added</h2>
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    <thead>
-                        <tr>
-                            <th>
-                            </th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Review</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+            {
+                reviews.length == 0 ?
+                    <>
+                        <h2 className="text-5xl text-center py-5">No reviews were added</h2>
+                    </> :
+                    <>
+                        <div className="overflow-x-auto w-full">
+                            <table className="table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                        </th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Review</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
 
-                    <tbody>
-                        {
-                            reviews?.map(review => <AllReviews
-                                key={review._id}
-                                review={review}
-                                handleDelete={handleDelete}
-                                handleStatusUpdate={handleStatusUpdate}
-                            ></AllReviews>)
-                        }
-                    </tbody>
-                </table>
-            </div>
+                                <tbody>
+                                    {
+                                        reviews?.map(review => <AllReviews
+                                            key={review._id}
+                                            review={review}
+                                            handleDelete={handleDelete}
+                                            handleStatusUpdate={handleStatusUpdate}
+                                        ></AllReviews>)
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </>}
+
+
         </div>
     );
 };

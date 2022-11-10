@@ -6,7 +6,7 @@ import ServicesCard from './ServicesCard';
 const Services = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://quick-eat-server.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -23,7 +23,7 @@ const Services = () => {
                     ></ServicesCard>)
                 }
             </div>
-           <div className='text-center mx-2 my-4'> <button className="btn btn-warning bg-orange-500"><Link className='text-white  text-decoration-none' to='/services'>See All</Link></button></div>
+            <div className='text-center mx-2 my-4'> <button className="btn btn-warning bg-orange-500"><Link className='text-white  text-decoration-none' to='/services'>See All</Link></button></div>
         </div>
     );
 };
