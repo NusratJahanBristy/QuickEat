@@ -1,13 +1,13 @@
 import React from 'react';
 
-const AllReviews = ({review}) => {
+const AllReviews = ({review,handleDelete}) => {
     const { _id, img, price, serviceName, imgUrl,details, rating } = review;
     
     return (
         <tr>
         <th>
             <label>
-                {/* <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>X</button> */}
+                <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>X</button>
             </label>
         </th>
         <td>

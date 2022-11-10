@@ -10,6 +10,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
+        return <h1 className='text-5xl '>loading</h1>
         // return <Spinner animation='border' variant='primary' />
         // return <img className='mx-auto w-40 h-40' src={spinner} alt=''/>
         // return <div className="radial-progress text-primary" style={{"--value":70}}>70%</div>
