@@ -1,11 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import loginimg from '../../assets/images/login/login.gif'
-
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import loginimg from '../../assets/images/login.gif'
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 const Login = () => {
-    const handleLogin=event=>{
+    const[ error,setError]=useState('')
+    const {login}=useContext(AuthContext);
+    const navigate = useNavigate();
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
+    const handleLogin = event => {
         event.preventDefault();
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        login(email,password)
+        .then(result=>{
+            const user=result.user;
+            toast.success('Successfully Login', { autoClose: 3000 })
+            console.log(user)
+            form.reset();
+            setError('');
+            navigate(from, { replace: true });
+            
+          
+        })
+        .catch(err=>console.log(err))
     }
+   
     return (
         <div className="hero w-full my-8 ">
         <div className="hero-content gap-20 grid md:grid-cols-2 flex-col lg:flex-row">
