@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
-// import './ServicesCard.css'
+
 
 const ServicesCard = ({ service }) => {
   const { _id, img, price, serviceName,email, details, rating } = service;

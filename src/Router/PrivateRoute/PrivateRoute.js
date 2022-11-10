@@ -12,7 +12,6 @@ const PrivateRoute = ({ children }) => {
     if (loading) {
       
         return <img className='mx-auto w-40 h-40' src={spinner} alt=''/>
-    
     }
     if (!user) {
         return <Navigate to='/login' state={{ from: location }} replace></Navigate>

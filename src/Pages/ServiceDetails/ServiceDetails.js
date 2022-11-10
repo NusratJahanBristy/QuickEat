@@ -18,7 +18,6 @@ const ServiceDetails = () => {
     const imgUrl=form.imgUrl.value
     const review=form.review.value  
 
-
     const myreview={
       service: _id,
       serviceName:serviceName,
@@ -44,7 +43,6 @@ fetch('http://localhost:5000/reviews',{
   console.log(data)})
 .catch(err=>console.error(err))
  
-
   }
   return (
     <div className="hero w-full  ">
@@ -71,10 +69,7 @@ fetch('http://localhost:5000/reviews',{
           </div>
         </div>
        
-
-
 <div className='mt-6 px-10'>
-  
 <form onSubmit={handlePlaceReview}>
        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
        <input name='name' type="text" placeholder="Name" className="input input-bordered w-full  " />

@@ -4,92 +4,89 @@ import AllReviews from './AllReviews';
 import { toast } from 'react-toastify';
 
 const MyReviews = () => {
-    const {user}=useContext(AuthContext);
-    const [reviews,setReviews]=useState([])
+    const { user } = useContext(AuthContext);
+    const [reviews, setReviews] = useState([])
 
-    useEffect(()=>{
-       fetch(`http://localhost:5000/reviews`)
-       .then(res=>res.json())
-       .then(data=>setReviews(data)) 
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
     })
-//delete
-    const handleDelete = id =>{
+    //delete
+    const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete this review');
-        if(proceed){
+        if (proceed) {
             fetch(`http://localhost:5000/reviews/${id}`, {
                 method: 'DELETE'
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0){
-                    toast.success('Successfully Deleted', { autoClose: 3000 })
-                    const remaining = reviews.filter(rew => rew._id !== id);
-                    setReviews(remaining);
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        toast.success('Successfully Deleted', { autoClose: 3000 })
+                        const remaining = reviews.filter(rew => rew._id !== id);
+                        setReviews(remaining);
+                    }
+                })
         }
     }
-    
-
     //update
     const handleStatusUpdate = id => {
         fetch(`http://localhost:5000/orders/${id}`, {
-            method: 'PATCH', 
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({status: 'Approved'})
+            body: JSON.stringify({ status: 'Approved' })
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.modifiedCount > 0) {
-                const remaining = reviews.filter(rew => rew._id !== id);
-                const approving = reviews.find(rew => rew._id === id);
-                approving.status = 'Approved'
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = reviews.filter(rew => rew._id !== id);
+                    const approving = reviews.find(rew => rew._id === id);
+                    approving.status = 'Approved'
 
-                const newReviews = [approving, ...remaining];
-                setReviews(newReviews);
-            }
-        })
+                    const newReviews = [approving, ...remaining];
+                    setReviews(newReviews);
+                }
+            })
     }
     return (
         <div>
-          
-        <h2 className="text-5xl text-center py-5">{reviews.length} Reviews</h2>
 
-        {/* {
+            <h2 className="text-5xl text-center py-5">{reviews.length} Reviews</h2>
+
+            {/* {
       user?.uid ?
         <></>:<></>} */}
-        <h2 className="text-5xl text-center py-5">No reviews were added</h2>
-        <div className="overflow-x-auto w-full">
-            <table className="table w-full">
-                <thead>
-                    <tr>
-                        <th>
-                        </th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Review</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    {
-                        reviews?.map(review => <AllReviews
-                            key={review._id}
-                            review={review}
-                            handleDelete={handleDelete}
-                            handleStatusUpdate={handleStatusUpdate}
-                        ></AllReviews>)
-                        
-                    }
-                </tbody>
-            </table>
+            <h2 className="text-5xl text-center py-5">No reviews were added</h2>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
+                    <thead>
+                        <tr>
+                            <th>
+                            </th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Review</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {
+                            reviews?.map(review => <AllReviews
+                                key={review._id}
+                                review={review}
+                                handleDelete={handleDelete}
+                                handleStatusUpdate={handleStatusUpdate}
+                            ></AllReviews>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
     );
 };
 

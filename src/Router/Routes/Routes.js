@@ -1,6 +1,6 @@
 import AddServices from "../../AddServices/AddServices";
 import Main from "../../Layout/Main";
-import AddReview from "../../Pages/AddReview/AddReview";
+// import AddReview from "../../Pages/AddReview/AddReview";
 import Blog from "../../Pages/Blog/Blog";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
@@ -8,7 +8,6 @@ import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services";
-import ServicesCard from "../../Pages/Services/ServicesCard";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -55,10 +54,10 @@ const router=createBrowserRouter([
           path: '/addservices',
           element:<PrivateRoute><AddServices></AddServices></PrivateRoute>
         },
-        {
-          path: '/addreview/:id',
-          element: <AddReview></AddReview>
-        },
+        // {
+        //   path: '/addreview/:id',
+        //   element: <AddReview></AddReview>
+        // },
         {
           path: '*', element: <ErrorPage></ErrorPage>
 

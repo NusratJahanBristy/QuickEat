@@ -6,14 +6,14 @@ import Banner from '../Banner/Banner';
 
 
 const Home = () => {
-    return (
-        <div>
-          <Banner></Banner>
-          <Services></Services>
-          <About></About>
-          <Discount></Discount>
-        </div>
-    );
+  return (
+    <div>
+      <Banner></Banner>
+      <Services></Services>
+      <About></About>
+      <Discount></Discount>
+    </div>
+  );
 };
 
 export default Home;
