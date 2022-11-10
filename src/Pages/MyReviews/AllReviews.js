@@ -1,7 +1,7 @@
 import React from 'react';
 
-const AllReviews = ({review,handleDelete}) => {
-    const { _id, img, price, serviceName, imgUrl,details, rating } = review;
+const AllReviews = ({review,handleDelete,handleStatusUpdate}) => {
+    const { _id, img, price, serviceName, imgUrl,details, rating,status } = review;
     
     return (
         <tr>
@@ -32,9 +32,9 @@ const AllReviews = ({review,handleDelete}) => {
         </td>
         <td>Purple</td>
         <th>
-            {/* <button 
+            <button 
             onClick={() => handleStatusUpdate(_id)}
-            className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button> */}
+            className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
         </th>
     </tr>
     );

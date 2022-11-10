@@ -68,7 +68,7 @@ const SignUp = () => {
                     </div>
                 </form>
                 <p className='text-center'>Already have an account<Link className='text-orange-600 font-bold' to='/login'>Log in</Link></p>
-                <button onClick={handleGoogleSignIn} className='mt-3 btn btn-warning'><FcGoogle className='mx-2 w-6 h-6'></FcGoogle>Login with Google</button>
+                <button onClick={handleGoogleSignIn} className='mt-3 btn btn-outline btn-warning'><FcGoogle className='mx-2 w-6 h-6'></FcGoogle>Login with Google</button>
             </div>
         </div>
     </div>

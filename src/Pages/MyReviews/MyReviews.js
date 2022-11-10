@@ -12,7 +12,7 @@ const MyReviews = () => {
        .then(res=>res.json())
        .then(data=>setReviews(data)) 
     })
-
+//delete
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to delete this review');
         if(proceed){
@@ -31,10 +31,38 @@ const MyReviews = () => {
         }
     }
     
+
+    //update
+    const handleStatusUpdate = id => {
+        fetch(`http://localhost:5000/orders/${id}`, {
+            method: 'PATCH', 
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({status: 'Approved'})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount > 0) {
+                const remaining = reviews.filter(rew => rew._id !== id);
+                const approving = reviews.find(rew => rew._id === id);
+                approving.status = 'Approved'
+
+                const newReviews = [approving, ...remaining];
+                setReviews(newReviews);
+            }
+        })
+    }
     return (
         <div>
           
         <h2 className="text-5xl text-center py-5">{reviews.length} Reviews</h2>
+
+        {/* {
+      user?.uid ?
+        <></>:<></>} */}
+        <h2 className="text-5xl text-center py-5">No reviews were added</h2>
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
                 <thead>
@@ -54,6 +82,7 @@ const MyReviews = () => {
                             key={review._id}
                             review={review}
                             handleDelete={handleDelete}
+                            handleStatusUpdate={handleStatusUpdate}
                         ></AllReviews>)
                         
                     }
