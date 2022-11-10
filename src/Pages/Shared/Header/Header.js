@@ -16,8 +16,13 @@ const Header = () => {
     {
       user?.uid ?
         <>
-          <Link className='text-light mx-2 text-decoration-none ' to='/myreviews'>My Reviews</Link>
-          <Link className='text-light mx-2 text-decoration-none ' to='/addservices'>Add Service</Link>
+         <li className='font-semibold'><Link to='/'>Home</Link></li>
+          <li className='font-semibold'><Link to='/services'>Services</Link></li>
+          <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
+          <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>
+          <li className='font-semibold'><Link to='/addservices'>Add Service</Link></li>
+          {/* <Link className='text-light mx-2 text-decoration-none ' to='/myreviews'>My Reviews</Link> */}
+          {/* <Link className='text-light mx-2 text-decoration-none ' to='/addservices'>Add Service</Link> */}
 
         </>
         :

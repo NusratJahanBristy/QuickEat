@@ -18,16 +18,18 @@ const AuthProvider = ({children}) => {
 
 //userCreate
     const createUser=(email,password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
 
     }
 //user login
     const login=(email,password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     //logout
     const logOut = () => {
-        // setLoading(true)
+        setLoading(true)
         return signOut(auth);
     }
     useEffect(()=>{

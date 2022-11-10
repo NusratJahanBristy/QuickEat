@@ -1,5 +1,6 @@
 import AddServices from "../../AddServices/AddServices";
 import Main from "../../Layout/Main";
+import AddReview from "../../Pages/AddReview/AddReview";
 import Blog from "../../Pages/Blog/Blog";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
@@ -53,6 +54,10 @@ const router=createBrowserRouter([
         {
           path: '/addservices',
           element:<PrivateRoute><AddServices></AddServices></PrivateRoute>
+        },
+        {
+          path: '/addreview/:id',
+          element: <AddReview></AddReview>
         },
         {
           path: '*', element: <ErrorPage></ErrorPage>

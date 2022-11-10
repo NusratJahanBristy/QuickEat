@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+// import './ServicesCard.css'
 
 const ServicesCard = ({ service }) => {
-  const { _id, img, price, serviceName, details, rating } = service;
+  const { _id, img, price, serviceName,email, details, rating } = service;
   return (
-    <div className="card w-full bg-base-100 shadow-xl">
+    <div className="card h-5/6 w-full bg-base-100 shadow-xl fixed-height">
       <figure className='h-1/2'><img className='h-5/6 w-5/6' src={img} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="card-title text-3xl font-semibold">{serviceName}</h2>
-        <p className='text-xl '>
+        <p className='text-xl'>
           {
             details?.length > 100 ?
               <p>{details?.slice(0, 100) + '...'}</p>
               : <p>{details}</p>
           }
-
         </p>
-        <div className='flex mb-2'>
+        <div className='flex'>
           <p className='text-2xl text-orange-600 font-semibold'>Price: ${price}</p>
           <p className='text-2xl text-gray-600 font-semibold'><div className='flex justify-end text-warning align-top'>{rating}<FaStar></FaStar><FaStar></FaStar><FaStarHalfAlt></FaStarHalfAlt> </div></p>
         </div>
